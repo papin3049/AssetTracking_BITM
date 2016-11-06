@@ -1,0 +1,57 @@
+﻿
+@model AssetTrackingSystem.Models.GeneralCategory
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="col-lg-10 content">
+    <div class="col-md-5">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                Organization Edit
+
+            </div>
+            @using (Html.BeginForm("Edit", "GeneralCategory", FormMethod.Post, new { @class = "form-horizontal" }))
+            {
+                <div class="panel-body">
+                    <div>
+                        @Html.LabelFor(m => m.Name)
+
+                        @Html.TextBoxFor(m => m.Name, new { @placeholder = "Name", @class = "form-control" })
+                        <br />
+                    </div>
+                   
+                    <div>
+                        @Html.LabelFor(m => m.Code)
+
+                        @Html.TextBoxFor(m => m.Code, new { @placeholder = "Code", @class = "form-control" })
+                        <br />
+                    </div>
+                    
+                    <div>
+                        <button id="autoclosable-btn-success" class="btn btn-primary btn-success btn-block" type="submit"> Save</button>
+                    </div>
+                    <br />
+
+                </div>
+
+            }
+
+            <div id="autoclosable-btn-success" class="alert alert-success">
+                @if (ViewBag.Message != null)
+                {
+                    <strong>@ViewBag.Message</strong>
+                }
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+@section Scripts
+    {
+    <script src="~/scripts/button.js"></script>
+}
+
+

@@ -1,0 +1,25 @@
+﻿@model AssetTracking.Model.GeneralcategoryCreateVM
+
+
+
+
+
+@foreach (var generalCategory in Model.GeneralCategories)
+{
+    <tr>
+
+        <td>
+            @generalCategory.Name
+        </td>
+        <td>
+            @generalCategory.Code
+        </td>
+        
+        <td align="center">
+            <a class="btn btn-default" href="@Url.Action("Edit", "GeneralCategory", new {id = generalCategory.id}, null)"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a class="btn btn-danger" href="@Url.Action("Delete", "GeneralCategory", new {id = generalCategory.id}, null)"><span class="glyphicon glyphicon-remove"></span></a>
+        </td>
+    </tr>
+}
+
+

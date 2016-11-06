@@ -1,0 +1,31 @@
+﻿
+@model AssetTracking.Model.Models.ViewModel.SubCategoryCreateVM
+
+
+
+
+
+@foreach (var subcategory in Model.SubCategories)
+{
+    <tr>
+
+
+        <td>
+            @subcategory.SubCategoryName
+        </td>
+        <td>
+            @subcategory.SubCategoryCode
+        </td>
+        <td>
+            @subcategory.Description
+        </td>
+
+        <td align="center">
+            <a class="btn btn-default" href="@Url.Action("Edit", "SubCategory", new {id = subcategory.id}, null)"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a class="btn btn-danger" href="@Url.Action("Delete", "SubCategory", new {id = subcategory.id}, null)"><span class="glyphicon glyphicon-remove"></span></a>
+        </td>
+    </tr>
+}
+
+
+

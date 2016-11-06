@@ -1,0 +1,87 @@
+﻿
+
+@model AssetTracking.Model.OrganizationCreateVM
+
+<table class="table table-striped table-bordered table-list">
+    <thead>
+        <tr>
+
+            <th>Code</th>
+            <th>Name</th>
+            <th>Short Name</th>
+            <th>Location</th>
+            <th><em class="glyphicon glyphicon-cog"></em></th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var organization in Model.Organizations)
+        {
+            <tr>
+
+                <td>
+                    @organization.Code
+                </td>
+                <td>
+                    @organization.Name
+                </td>
+                <td>
+                    @organization.ShortName
+                </td>
+                <td>
+                    @organization.Location
+                </td>
+                <td align="center">
+                    <a class="btn btn-default" href="@Url.Action("Edit", "Organization", new {id = organization.id}, null)"><span class="glyphicon glyphicon-pencil"></span></a>
+                    <a class="btn btn-danger" href="@Url.Action("Delete", "Organization", new {id = organization.id}, null)"><span class="glyphicon glyphicon-remove"></span></a>
+                </td>
+            </tr>
+        }
+
+    </tbody>
+</table>
+
+
+<div class="panel-footer">
+    <div class="row">
+        <div class="col col-xs-4">
+            Page @(Model.Pager.CurrentPage) of @(Model.Pager.TotalPages)
+        </div>
+        <div class="col col-xs-8">
+            @if (Model.Pager.EndPage > 1)
+            {
+                <ul class="pagination">
+                    @if (Model.Pager.CurrentPage > 1)
+                    {
+                        <li>
+                            <a href="~/Organization/Create">First</a>
+                        </li>
+                        <li>
+                            <a href="~/Organization/Create?page=@(Model.Pager.CurrentPage - 1)">Previous</a>
+                        </li>
+                    }
+
+                    @for (var page = Model.Pager.StartPage; page <= Model.Pager.EndPage; page++)
+                    {
+                        <li class="@(page == Model.Pager.CurrentPage ? "active" : "")">
+                            <a href="~/Organization/Create?page=@page">@page</a>
+                        </li>    }
+
+                    @if (Model.Pager.CurrentPage < Model.Pager.TotalPages)
+                    {
+                        <li>
+                            <a href="~/Organization/Create?page=@(Model.Pager.CurrentPage + 1)">Next</a>
+                        </li>
+                        <li>
+                            <a href="~/Organization/Create?page=@(Model.Pager.TotalPages)">Last</a>
+                        </li>
+                    }
+                </ul>
+            }
+            <ul class="pagination visible-xs pull-right">
+                <li><a href="#">«</a></li>
+                <li><a href="#">»</a></li>
+            </ul>
+        </div>
+    </div>
+</div>

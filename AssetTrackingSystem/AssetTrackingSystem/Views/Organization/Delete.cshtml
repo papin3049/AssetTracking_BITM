@@ -1,0 +1,68 @@
+﻿@model AssetTracking.Model.Organization
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="col-lg-10 content">
+    <div class="col-md-5">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+
+            </div>
+            @using (Html.BeginForm("Delete", "Organization", FormMethod.Post, new { @class = "form-horizontal" }))
+            {
+                <div class="panel-body">
+                    <div>
+                        @Html.LabelFor(m => m.Name)
+
+                        @Html.DisplayTextFor(m => m.Name)
+                        <br />
+                    </div>
+                    <div>
+                        @Html.LabelFor(m => m.ShortName)
+
+                        @Html.DisplayTextFor(m => m.ShortName)
+                        <br />
+                    </div>
+                    <div>
+                        @Html.LabelFor(m => m.Code)
+
+                        @Html.DisplayTextFor(m => m.Code)
+                        <br />
+                    </div>
+                    <div>
+                        @Html.LabelFor(m => m.Location)
+
+                        @Html.DisplayTextFor(m => m.Location)
+                        <br />
+                    </div>
+                    <div>
+                        <button id="autoclosable-btn-success" class="btn btn-primary btn-success btn-block" type="submit">Delete</button>
+                    </div>
+                    <br />
+
+                </div>
+
+            }
+
+            <div id="autoclosable-btn-success" class="alert alert-success">
+                @if (ViewBag.Message != null)
+                {
+                    <strong>@ViewBag.Message</strong>
+                }
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+@section Scripts
+    {
+    <script src="~/scripts/button.js"></script>
+}
+
+
+
+

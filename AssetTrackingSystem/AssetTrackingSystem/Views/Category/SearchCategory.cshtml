@@ -1,0 +1,25 @@
+﻿
+@model AssetTracking.Model.Models.ViewModel.CategoryCreateVM
+
+
+
+
+
+@foreach (var category in Model.Categories)
+{
+    <tr>
+
+        <td>
+            @category.CategoryName
+        </td>
+        <td>
+            @category.CategoryCode
+        </td>
+
+        <td align="center">
+            <a class="btn btn-default" href="@Url.Action("Edit", "Category", new {id = category.id}, null)"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a class="btn btn-danger" href="@Url.Action("Delete", "Category", new {id = category.id}, null)"><span class="glyphicon glyphicon-remove"></span></a>
+        </td>
+    </tr>
+}
+

@@ -1,0 +1,26 @@
+﻿
+@model AssetTrackingSystem.Models.ViewModel.OrganizationBranchCreateVM
+
+
+
+
+
+@foreach (var branch in Model.Branches)
+{
+    <tr>
+
+        
+        <td>
+            @branch.BranchName
+        </td>
+        <td>
+            @branch.ShortName
+        </td>
+       
+        <td align="center">
+            <a class="btn btn-default" href="@Url.Action("Edit", "OrganizationBranch", new {id = branch.id}, null)"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a class="btn btn-danger" href="@Url.Action("Delete", "OrganizationBranch", new {id = branch.id}, null)"><span class="glyphicon glyphicon-remove"></span></a>
+        </td>
+    </tr>
+}
+

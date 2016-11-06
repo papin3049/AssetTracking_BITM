@@ -1,0 +1,206 @@
+﻿@model AssetTracking.Model.Models.ViewModel.AssetLocationCreateVM
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Create";
+    AjaxOptions options = new AjaxOptions
+    {
+        UpdateTargetId = "searchResult",
+        Confirm = "Are you sure to start search?",
+        InsertionMode = InsertionMode.Replace,
+        LoadingElementId = "divLoading"
+
+    };
+}
+
+
+
+<div class="col-lg-10 content">
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                SubCategory Setup
+
+            </div>
+            @using (Html.BeginForm("Create", "AssetLocation", FormMethod.Post, new { @class = "form-horizontal" }))
+            {
+                <div class="panel-body">
+
+                    <div>
+                        @Html.Label("Organizations")
+                        <br />
+                        <div>
+                            @Html.DropDownList("OrganizationId", new SelectList(Model.Organizations, "Value", "Text"), new { @class = "form-control" })
+                        </div>
+
+                        <br />
+                        <br />
+                    </div>
+
+                    <div>
+                        @Html.Label("Branch")
+                        <br />
+                        <div>
+                            @Html.DropDownListFor(m => m.AssetLocation.BranchId, Enumerable.Empty<SelectListItem>(), "--Select Category--", new { id = "branchId", @class = "form-control" })
+                        </div>
+
+                        <br />
+                        <br />
+                    </div>
+
+                    <div>
+                        @Html.LabelFor(m => m.AssetLocation.Name)
+
+                        @Html.TextBoxFor(m => m.AssetLocation.Name, new { @placeholder = "Name", @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.AssetLocation.Name, null, new { @class = "text-danger" })
+                        <br />
+                    </div>
+
+                    <div>
+                        @Html.LabelFor(m => m.AssetLocation.ShortName)
+
+                        @Html.TextBoxFor(m => m.AssetLocation.ShortName, new { @placeholder = "ShortName", @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.AssetLocation.ShortName, null, new { @class = "text-danger" })
+
+                        <br />
+                    </div>
+
+                    
+
+                </div>
+                <div>
+                    <button type="submit" class="btn btn-primary btn-block ">Save</button>
+                </div>
+                <br />
+
+
+
+            }
+
+
+            <div class="alert alert-success">
+                @if (ViewBag.Message != null)
+                {
+                    <strong>@ViewBag.Message</strong>
+                }
+
+            </div>
+
+
+
+        </div>
+
+
+
+
+
+
+    </div>
+
+    <div class="col-md-7 ">
+        <div class="panel panel-default panel-table">
+            <div class="panel-heading">
+                <div class="row">
+
+                    @using (Ajax.BeginForm("SearchAssetLocation", options))
+                    {
+                        <div id="divLoading" style="color: black; width: 200px; background-color: yellow; display: none; position: absolute;">
+
+                        </div>
+
+                        <div class="col col-xs-6">
+                            @Html.TextBox("keyword", null, new { @class = "form-control" })
+                        </div>
+                        <div class="col col-xs-6 text-right">
+                            <button type="submit" class="btn btn-sm btn-primary btn-create">Search</button>
+                        </div>
+                    }
+                </div>
+
+            </div>
+            <div class="panel-body">
+                <table class="table table-striped table-bordered table-list">
+                    <thead>
+                        <tr>
+
+
+                            <th>Name</th>
+                            <th>Short Name</th>
+                           
+                            <th><em class="glyphicon glyphicon-cog"></em></th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="searchResult">
+                        @Html.Action("SearchAssetLocation", new { keyword = "" })
+
+
+                    </tbody>
+                </table>
+
+            </div>
+            <div class="panel-footer">
+                <div class="row">
+                    <div class="col col-xs-4">
+                        Page 1 of 5
+                    </div>
+                    <div class="col col-xs-8">
+                        <ul class="pagination hidden-xs pull-right">
+                            <li><a href="#">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">4</a></li>
+                            <li><a href="#">5</a></li>
+                        </ul>
+                        <ul class="pagination visible-xs pull-right">
+                            <li><a href="#">«</a></li>
+                            <li><a href="#">»</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+@section scripts{
+
+    
+    <script src="~/scripts/button.js"></script>
+    <script>
+
+        $("#OrganizationId").on("change", function() {
+            var organizationId = $('#OrganizationId').val();
+
+            var jsonData = { organizationId: organizationId };
+            $('#branchId').empty();
+            $.ajax({
+                type: "POST",
+                url: "/AssetLocation/GetBranchesByOrganization",
+                data: JSON.stringify(jsonData),
+                contentType: "application/json; charset=utf-8",
+                success: function(data) {
+                    // get json data list
+                    $.each(data, function(key, branch) {
+
+                        var optionText = "<option value='" + branch.Id + "'>" + branch.Name + "</option>";
+                        $('#branchId').append(optionText);
+                    });
+
+
+                }
+
+
+            });
+
+        });
+
+    </script>
+
+
+
+
+
+    <script src="~/scripts/jquery.validate.unobtrusive.js"></script>
+    <script src="~/scripts/jquery.unobtrusive-ajax.js"></script>
+
+}

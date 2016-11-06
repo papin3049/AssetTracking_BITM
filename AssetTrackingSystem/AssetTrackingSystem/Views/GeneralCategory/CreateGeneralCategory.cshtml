@@ -1,0 +1,71 @@
+﻿@model AssetTrackingSystem.Models.GeneralCategory
+
+@{
+    ViewBag.Title = "CreateCategory";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>CreateCategory</h2>
+
+<div class="col-md-4">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            Organization Setup
+
+        </div>
+        @using (Html.BeginForm("Create", "GeneralCategory", FormMethod.Post, new { @class = "form-horizontal" }))
+        {
+            <div class="panel-body">
+                <div>
+                    @Html.LabelFor(m => m.Name)
+
+                    @Html.TextBoxFor(m => m.Name, new { @placeholder = "Name", @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.Name, null, new { @class = "text-danger" })
+                    <br />
+                </div>
+
+                <div>
+                    @Html.LabelFor(m => m.Code)
+
+                    @Html.TextBoxFor(m => m.Code, new { @placeholder = "Code", @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.Code, null, new { @class = "text-danger" })
+                    <br />
+                </div>
+
+                <div>
+                    @Html.LabelFor(m => m.Description)
+
+                    @Html.TextBoxFor(m => m.Description, new { @placeholder = "Code", @class = "form-control" })
+
+                    <br />
+                </div>
+
+            </div>
+                <div>
+                    <button type="submit" class="btn btn-primary btn-block ">Save</button>
+                </div>
+                <br />
+        
+        
+
+        }
+
+
+        <div class="alert alert-success">
+            @if (ViewBag.Message != null)
+            {
+                <strong>@ViewBag.Message</strong>
+            }
+
+        </div>
+
+
+
+    </div>
+
+
+
+
+
+
+</div>

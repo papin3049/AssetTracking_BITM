@@ -1,0 +1,64 @@
+﻿@model AssetTracking.Model.Organization
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div  class="col-lg-10 content">
+    <div class="col-md-5">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                Organization Edit
+
+            </div>
+            @using (Html.BeginForm("Edit", "Organization", FormMethod.Post, new { @class = "form-horizontal" }))
+            {
+                <div class="panel-body">
+                    <div>
+                        @Html.LabelFor(m => m.Name)
+
+                        @Html.TextBoxFor(m => m.Name, new { @placeholder = "Name", @class = "form-control" })
+                        <br />
+                    </div>
+                    <div>
+                        @Html.LabelFor(m => m.ShortName)
+
+                        @Html.TextBoxFor(m => m.ShortName, new { @placeholder = "Short Name", @class = "form-control" })
+                        <br />
+                    </div>
+                    <div>
+                        @Html.LabelFor(m => m.Code)
+
+                        @Html.TextBoxFor(m => m.Code, new { @placeholder = "Code", @class = "form-control" })
+                        <br />
+                    </div>
+                    <div>
+                        @Html.LabelFor(m => m.Location)
+
+                        @Html.TextBoxFor(m => m.Location, new { @placeholder = "Location", @class = "form-control" })
+                        <br />
+                    </div>
+                    <div>
+                        <button id="autoclosable-btn-success" class="btn btn-primary btn-success btn-block" type="submit">Update</button>
+                    </div>
+                    <br />
+
+                </div>
+
+            }
+
+            <div id="autoclosable-btn-success" class="alert alert-success">
+                @if (ViewBag.Message != null)
+                {
+                    <strong>@ViewBag.Message</strong>
+                }
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+@section Scripts
+    {
+    <script src="~/scripts/button.js"></script>
+}

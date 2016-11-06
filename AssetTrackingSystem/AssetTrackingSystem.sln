@@ -4,6 +4,24 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AssetTrackingSystem", "AssetTrackingSystem\AssetTrackingSystem.csproj", "{BB74E2D0-8778-465E-83B5-D042A6928A0E}"
+	ProjectSection(ProjectDependencies) = postProject
+		{EB00B114-A624-4467-97C9-DC899854BF92} = {EB00B114-A624-4467-97C9-DC899854BF92}
+		{33F7C64A-A138-42DD-BAA8-36BA41B4FEC4} = {33F7C64A-A138-42DD-BAA8-36BA41B4FEC4}
+		{3CA993DB-527F-480C-B751-65433BAD010F} = {3CA993DB-527F-480C-B751-65433BAD010F}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AssetTracking.Model", "AssetTracking.Model\AssetTracking.Model.csproj", "{EB00B114-A624-4467-97C9-DC899854BF92}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AssetTracking.DAL", "AssetTracking.DAL\AssetTracking.DAL.csproj", "{3CA993DB-527F-480C-B751-65433BAD010F}"
+	ProjectSection(ProjectDependencies) = postProject
+		{EB00B114-A624-4467-97C9-DC899854BF92} = {EB00B114-A624-4467-97C9-DC899854BF92}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AssetTracking.BLL", "AssetTracking.BLL\AssetTracking.BLL.csproj", "{33F7C64A-A138-42DD-BAA8-36BA41B4FEC4}"
+	ProjectSection(ProjectDependencies) = postProject
+		{EB00B114-A624-4467-97C9-DC899854BF92} = {EB00B114-A624-4467-97C9-DC899854BF92}
+		{3CA993DB-527F-480C-B751-65433BAD010F} = {3CA993DB-527F-480C-B751-65433BAD010F}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +33,18 @@ Global
 		{BB74E2D0-8778-465E-83B5-D042A6928A0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BB74E2D0-8778-465E-83B5-D042A6928A0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BB74E2D0-8778-465E-83B5-D042A6928A0E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB00B114-A624-4467-97C9-DC899854BF92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB00B114-A624-4467-97C9-DC899854BF92}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB00B114-A624-4467-97C9-DC899854BF92}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB00B114-A624-4467-97C9-DC899854BF92}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3CA993DB-527F-480C-B751-65433BAD010F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3CA993DB-527F-480C-B751-65433BAD010F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3CA993DB-527F-480C-B751-65433BAD010F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3CA993DB-527F-480C-B751-65433BAD010F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33F7C64A-A138-42DD-BAA8-36BA41B4FEC4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33F7C64A-A138-42DD-BAA8-36BA41B4FEC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33F7C64A-A138-42DD-BAA8-36BA41B4FEC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33F7C64A-A138-42DD-BAA8-36BA41B4FEC4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,0 +1,126 @@
+﻿
+@model AssetTracking.Model.OrganizationCreateVM
+
+
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Create";
+    AjaxOptions options = new AjaxOptions
+    {
+        UpdateTargetId = "searchResult",
+        //Confirm = "Are you sure to start search?",
+        InsertionMode = InsertionMode.Replace,
+        LoadingElementId = "divLoading"
+
+    };
+}
+
+<div  class="col-lg-10 content">
+
+    <div class="col-md-5">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                Organization Setup
+
+            </div>
+            @using (Html.BeginForm("Create", "Organization", FormMethod.Post, new { @class = "form-horizontal" }))
+            {
+                <div class="panel-body">
+                    <div>
+                        @Html.LabelFor(m => m.Organization.Name)
+
+                        @Html.TextBoxFor(m => m.Organization.Name, new { @placeholder = "Name", @class = "form-control" })
+                        <br />
+                    </div>
+                    <div>
+                        @Html.LabelFor(m => m.Organization.ShortName)
+
+                        @Html.TextBoxFor(m => m.Organization.ShortName, new { @placeholder = "Short Name", @class = "form-control" })
+                        <br />
+                    </div>
+                    <div>
+                        @Html.LabelFor(m => m.Organization.Code)
+
+                        @Html.TextBoxFor(m => m.Organization.Code, new { @placeholder = "Code", @class = "form-control" })
+                        <br />
+                    </div>
+                    <div>
+                        
+                        @Html.LabelFor(m => m.Organization.Location)
+
+                        @Html.TextBoxFor(m => m.Organization.Location, new { @placeholder = "Location", @class = "form-control"})
+                        
+                        <br/>
+                    </div>
+                    <div>
+                        <button id="autoclosable-btn-success" class="btn btn-primary btn-success btn-block" type="submit"> Save</button>
+                    </div>
+                    <br />
+
+                </div>
+         
+            }
+
+
+            <div id="autoclosable-btn-success" class="alert alert-success">
+                @if (ViewBag.Message != null)
+                {
+                    <strong>@ViewBag.Message</strong>
+                }
+
+            </div>
+        </div>
+    </div>
+    <div class="col-md-7 ">
+        <div class="panel panel-default panel-table">
+            <div class="panel-heading">
+                <div class="row">
+
+                    @using (Ajax.BeginForm("SearchOrganization", options))
+                    {
+                        <div id="divLoading" style="color: black; width: 200px; background-color: yellow;  display: none; position: absolute;">
+                            Loading ....
+                        </div>
+
+                        <div class="col col-xs-6">
+                            @Html.TextBox("keyword",null,new {@class="form-control"})
+                        </div>
+                        <div class="col col-xs-6 text-right">
+                            <button type="submit" class="btn btn-sm btn-primary btn-create">Search</button>
+                        </div>
+    }
+                </div>
+
+            </div>
+            <div class="panel-body" id="searchResult">
+                @Html.Action("SearchOrganization", new { keyword = "" })
+                
+
+            </div>
+            
+        </div>
+    </div>
+
+
+</div>
+
+
+@section Scripts
+{
+
+    <script src="~/scripts/button.js"></script>
+    <script src="~/scripts/jquery-1.9.1.min.js"></script>
+    
+  
+
+    <script src="~/scripts/jquery.validate.unobtrusive.js"></script>
+    <script src="~/scripts/jquery.unobtrusive-ajax.js"></script>
+
+   
+
+    
+
+}
+
+

@@ -1,0 +1,29 @@
+﻿
+@model AssetTracking.Model.Models.ViewModel.AssetLocationCreateVM
+
+
+
+
+
+@foreach (var assetLocation in Model.AssetLocations)
+{
+    <tr>
+
+
+        <td>
+            @assetLocation.Name
+        </td>
+        <td>
+            @assetLocation.ShortName
+        </td>
+        
+
+        <td align="center">
+            <a class="btn btn-default" href="@Url.Action("Edit", "AssetLocation", new {id = assetLocation.id}, null)"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a class="btn btn-danger" href="@Url.Action("Delete", "AssetLocation", new {id = assetLocation.id}, null)"><span class="glyphicon glyphicon-remove"></span></a>
+        </td>
+    </tr>
+}
+
+
+
