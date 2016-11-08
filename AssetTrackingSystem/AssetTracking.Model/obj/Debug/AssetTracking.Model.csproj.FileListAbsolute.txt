@@ -54,3 +54,4 @@ H:\Github.AssetTracking\AssetTrackingSystem\AssetTracking.Model\obj\Debug\AssetT
 H:\Github.AssetTracking\AssetTrackingSystem\AssetTracking.Model\obj\Debug\AssetTracking.Model.csproj.GenerateResource.Cache
 H:\Github.AssetTracking\AssetTrackingSystem\AssetTracking.Model\obj\Debug\AssetTracking.Model.dll
 H:\Github.AssetTracking\AssetTrackingSystem\AssetTracking.Model\obj\Debug\AssetTracking.Model.pdb
+H:\Github.AssetTracking\AssetTrackingSystem\AssetTracking.Model\obj\Debug\AssetTracking.Model.Migrations.update2.resources

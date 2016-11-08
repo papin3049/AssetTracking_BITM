@@ -12,7 +12,7 @@ namespace AssetTracking.Model
     {
         public List<SelectListItem> GeneralCategories { get; set; }
         public List<SelectListItem> Categories { get; set; }
-        public IEnumerable<SubCategory> Subcategories { get; set; }
+        public IEnumerable<SubCategory> SubCategories { get; set; }
         public SubCategory SubCategory { get; set; }
 
     }

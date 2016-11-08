@@ -163,6 +163,10 @@
     <Compile Include="Migrations\201611081640590_update1.Designer.cs">
       <DependentUpon>201611081640590_update1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201611081749446_update2.cs" />
+    <Compile Include="Migrations\201611081749446_update2.Designer.cs">
+      <DependentUpon>201611081749446_update2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AssetLocation.cs" />
     <Compile Include="Models\Branch.cs" />
@@ -184,6 +188,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201611081640590_update1.resx">
       <DependentUpon>201611081640590_update1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611081749446_update2.resx">
+      <DependentUpon>201611081749446_update2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

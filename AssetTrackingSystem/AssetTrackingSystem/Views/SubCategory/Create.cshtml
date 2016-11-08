@@ -5,7 +5,7 @@
     AjaxOptions options = new AjaxOptions
     {
         UpdateTargetId = "searchResult",
-        Confirm = "Are you sure to start search?",
+        //Confirm = "Are you sure to start search?",
         InsertionMode = InsertionMode.Replace,
         LoadingElementId = "divLoading"
 
@@ -40,7 +40,7 @@
                         @Html.Label("Category")
                         <br/>
                         <div>
-                            @Html.DropDownListFor(m => m.SubCategory.CategoryId, Enumerable.Empty<SelectListItem>(), "--Select Category--", new {id = "categoryId", @class = "form-control"})
+                            @Html.DropDownListFor(m => m.SubCategory.Category.id, Enumerable.Empty<SelectListItem>(), "--Select Category--", new {id = "categoryId", @class = "form-control"})
                         </div>
 
                         <br/>

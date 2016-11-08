@@ -5,11 +5,14 @@ using System.Web;
 using System.Web.Mvc;
 using AssetTracking.Model;
 using AssetTracking.BLL;
+using System.Web.UI.WebControls;
 
 namespace AssetTrackingSystem.Controllers
 {
+    
     public class SubCategoryController : Controller
     {
+        AssetTrackingSystemDBContext db = new AssetTrackingSystemDBContext();
         private BaseCategoryManager baseCategoryManager;
 
         public SubCategoryController()
@@ -50,6 +53,19 @@ namespace AssetTrackingSystem.Controllers
                 .Select(c => new { Id = c.id, Name = c.CategoryName });
 
             return Json(categories, JsonRequestBehavior.AllowGet);
+        }
+
+        public PartialViewResult SearchSubCategory(string keyword)
+        {
+            var vm = new SubCategoryCreateVM();
+
+            var searchlist = db.SubCategories.Where(x => x.SubCategoryName.Contains(keyword)).ToList();
+
+            vm.SubCategories = searchlist;
+
+            return PartialView("SearchSubCategory", vm);
+
+
         }
 
     }
