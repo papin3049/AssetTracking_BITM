@@ -155,6 +155,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Context\AssetTrackingSystemDBContext.cs" />
+    <Compile Include="Migrations\201611081618457_dbFullCreate.cs" />
+    <Compile Include="Migrations\201611081618457_dbFullCreate.Designer.cs">
+      <DependentUpon>201611081618457_dbFullCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AssetLocation.cs" />
     <Compile Include="Models\Branch.cs" />
     <Compile Include="Models\Category.cs" />
@@ -169,7 +174,11 @@
     <Compile Include="Models\ViewModel\SubCategoryCreateVM.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201611081618457_dbFullCreate.resx">
+      <DependentUpon>201611081618457_dbFullCreate.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

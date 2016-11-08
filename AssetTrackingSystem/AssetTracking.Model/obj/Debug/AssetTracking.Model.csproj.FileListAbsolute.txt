@@ -52,3 +52,5 @@ H:\GitHub.AssetTracking\AssetTrackingSystem\AssetTracking.Model\bin\System.Web.W
 H:\GitHub.AssetTracking\AssetTrackingSystem\AssetTracking.Model\obj\Debug\AssetTracking.Model.csprojResolveAssemblyReference.cache
 H:\GitHub.AssetTracking\AssetTrackingSystem\AssetTracking.Model\obj\Debug\AssetTracking.Model.dll
 H:\GitHub.AssetTracking\AssetTrackingSystem\AssetTracking.Model\obj\Debug\AssetTracking.Model.pdb
+H:\Github.AssetTracking\AssetTrackingSystem\AssetTracking.Model\obj\Debug\AssetTracking.Model.Migrations.dbFullCreate.resources
+H:\Github.AssetTracking\AssetTrackingSystem\AssetTracking.Model\obj\Debug\AssetTracking.Model.csproj.GenerateResource.Cache

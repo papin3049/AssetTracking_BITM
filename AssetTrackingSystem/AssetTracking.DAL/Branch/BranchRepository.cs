@@ -45,7 +45,7 @@ namespace AssetTracking.DAL
         }
         public List<Branch> GetBranchByOrganization(int organizationId)
         {
-            return db.Branches.Where(x => x.Organization_id == organizationId).ToList();
+            return db.Branches.Where(x => x.Organization.id == organizationId).ToList();
         }
         public void Dispose()
        {
