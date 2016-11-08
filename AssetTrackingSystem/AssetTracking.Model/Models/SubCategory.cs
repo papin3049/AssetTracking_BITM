@@ -19,9 +19,6 @@ namespace AssetTracking.Model
 
         public string Description { get; set; }
 
-        
-
-        public int CategoryId { get; set; }
 
         public virtual GeneralCategory GeneralCategory { get; set; }
 

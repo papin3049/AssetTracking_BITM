@@ -43,7 +43,7 @@ namespace AssetTracking.DAL
         }
         public List<Category> GetCategoriesByGeneralCategory(int generalCategoryId)
         {
-            return db.Categories.Where(x => x.GeneralCategoryId.Equals(generalCategoryId)).ToList();
+            return db.Categories.Where(x => x.GeneralCategory.id.Equals(generalCategoryId)).ToList();
         }
         public void Dispose()
         {

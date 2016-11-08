@@ -7,7 +7,7 @@
     AjaxOptions options = new AjaxOptions
     {
         UpdateTargetId = "searchResult",
-        Confirm = "Are you sure to start search?",
+        //Confirm = "Are you sure to start search?",
         InsertionMode = InsertionMode.Replace,
         LoadingElementId = "divLoading"
 
@@ -30,7 +30,7 @@
                     <div>
                         @Html.Label("Organization")
                         <br/>
-                        @Html.DropDownListFor(m => m.Branch.Organization_id, new SelectList(Model.OrganizationList, "Value", "Text"), new {@class = "form-control"})
+                        @Html.DropDownListFor(m => m.OrganizationList, new SelectList(Model.OrganizationList, "Value", "Text"), new {@class = "form-control"})
 
                         <br/>
                     </div>

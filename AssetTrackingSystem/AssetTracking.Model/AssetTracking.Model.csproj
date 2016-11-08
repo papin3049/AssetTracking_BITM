@@ -159,6 +159,10 @@
     <Compile Include="Migrations\201611081618457_dbFullCreate.Designer.cs">
       <DependentUpon>201611081618457_dbFullCreate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201611081640590_update1.cs" />
+    <Compile Include="Migrations\201611081640590_update1.Designer.cs">
+      <DependentUpon>201611081640590_update1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AssetLocation.cs" />
     <Compile Include="Models\Branch.cs" />
@@ -177,6 +181,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201611081618457_dbFullCreate.resx">
       <DependentUpon>201611081618457_dbFullCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611081640590_update1.resx">
+      <DependentUpon>201611081640590_update1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -14,7 +14,6 @@ namespace AssetTracking.Model
         public int id { get; set; }
 
         public string CategoryName { get; set; }
-        public int GeneralCategoryId { get; set; }
 
         [Required]
         
