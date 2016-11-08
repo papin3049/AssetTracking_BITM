@@ -25,13 +25,13 @@ namespace AssetTrackingSystem.Controllers
         public ActionResult Create(int? page)
         {
             
-            var organization_List = db.Organizations.ToList();
-            var pager = new Pager(organization_List.Count(), page);
+            var organizationList = db.Organizations.ToList();
+            var pager = new Pager(organizationList.Count(), page);
 
             var organization = new OrganizationCreateVM
             {
                 Organization = new Organization(),
-                Organizations = organization_List.Skip((pager.CurrentPage - 1) * pager.PageSize).Take(pager.PageSize),
+                Organizations = organizationList.Skip((pager.CurrentPage - 1) * pager.PageSize).Take(pager.PageSize),
                 Pager = pager
             };
 
