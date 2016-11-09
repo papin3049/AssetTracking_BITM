@@ -28,7 +28,7 @@
                     <div>
                         @Html.Label("General Category")
                         <br/>
-                        @Html.DropDownListFor(m => m.Category.GeneralCategoryId, new SelectList(Model.GeneralCategoryList, "Value", "Text"), new {@class = "form-control"})
+                        @Html.DropDownListFor(m => m.Category.GeneralCategoryId, new SelectList(Model.GeneralCategoryList, "Value", "Text"), new { @class = "form-control" })
 
 
 

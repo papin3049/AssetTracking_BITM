@@ -167,6 +167,14 @@
     <Compile Include="Migrations\201611081749446_update2.Designer.cs">
       <DependentUpon>201611081749446_update2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201611091507304_updatecategoryidincategory.cs" />
+    <Compile Include="Migrations\201611091507304_updatecategoryidincategory.Designer.cs">
+      <DependentUpon>201611091507304_updatecategoryidincategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611091511250_updatecategoryidinsubcategory.cs" />
+    <Compile Include="Migrations\201611091511250_updatecategoryidinsubcategory.Designer.cs">
+      <DependentUpon>201611091511250_updatecategoryidinsubcategory.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AssetLocation.cs" />
     <Compile Include="Models\Branch.cs" />
@@ -191,6 +199,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201611081749446_update2.resx">
       <DependentUpon>201611081749446_update2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611091507304_updatecategoryidincategory.resx">
+      <DependentUpon>201611091507304_updatecategoryidincategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611091511250_updatecategoryidinsubcategory.resx">
+      <DependentUpon>201611091511250_updatecategoryidinsubcategory.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
