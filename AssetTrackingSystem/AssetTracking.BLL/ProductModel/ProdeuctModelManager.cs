@@ -1,45 +1,46 @@
-﻿using System;
+﻿using AssetTracking.DAL;
+using AssetTracking.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using AssetTracking.DAL;
-using AssetTracking.Model;
+using System.Web;
 
 namespace AssetTracking.BLL
 {
-  public  class BaseCategoryManager
+    public class ProdeuctModelManager
     {
         private GeneralCategoryRepository _generalCategoryRepository;
         private CategoryRepository _categoryRepository;
         private SubCategoryRepository _subCategoryRepository;
+        private ProductModelRepository _productModelRepository;
 
-        public BaseCategoryManager()
+        public ProdeuctModelManager()
         {
             _generalCategoryRepository = new GeneralCategoryRepository();
             _categoryRepository = new CategoryRepository();
             _subCategoryRepository = new SubCategoryRepository();
+            _productModelRepository = new ProductModelRepository();
         }
-        public bool Save(SubCategory subCategory)
+        public bool Save(ProductModel productModel)
         {
-            int rowAffected = _subCategoryRepository.Save(subCategory);
+            int rowAffected = _productModelRepository.Save(productModel);
 
             bool isSaved = rowAffected > 0;
 
             return isSaved;
         }
 
-        public bool Update(SubCategory subCategory)
+        public bool Update(ProductModel productModel)
         {
-            int rowAffected = _subCategoryRepository.Edit(subCategory);
+            int rowAffected = _productModelRepository.Edit(productModel);
             bool isSaved = rowAffected > 0;
 
             return isSaved;
         }
 
-        public bool Delete(SubCategory subCategory)
+        public bool Delete(ProductModel productModel)
         {
-            int rowAffected = _subCategoryRepository.Delete(subCategory);
+            int rowAffected = _productModelRepository.Delete(productModel);
 
             bool isSaved = rowAffected > 0;
 
@@ -54,5 +55,11 @@ namespace AssetTracking.BLL
         {
             return _categoryRepository.GetCategoriesByGeneralCategory(generalCategoryId);
         }
+
+        public List<SubCategory> GetSubCategoriesByCategory(int categoryId)
+        {
+            return _subCategoryRepository.GetSubCategoriesByCategory(categoryId);
+        }
+
     }
 }

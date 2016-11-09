@@ -53,7 +53,12 @@ namespace AssetTracking.DAL
                 return db.SubCategories.ToList();
             }
 
-      public void Dispose()
+        public List<SubCategory> GetSubCategoriesByCategory(int categoryId)
+        {
+            return db.SubCategories.Where(x => x.Category.id.Equals(categoryId)).ToList();
+        }
+
+        public void Dispose()
       {
             if (db != null)
             {

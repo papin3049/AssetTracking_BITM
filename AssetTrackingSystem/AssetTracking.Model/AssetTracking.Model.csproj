@@ -167,18 +167,24 @@
     <Compile Include="Migrations\201611081749446_update2.Designer.cs">
       <DependentUpon>201611081749446_update2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201611091232154_productModelTableAdded.cs" />
+    <Compile Include="Migrations\201611091232154_productModelTableAdded.Designer.cs">
+      <DependentUpon>201611091232154_productModelTableAdded.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AssetLocation.cs" />
     <Compile Include="Models\Branch.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\GeneralCategory.cs" />
     <Compile Include="Models\Organization.cs" />
+    <Compile Include="Models\ProductModel.cs" />
     <Compile Include="Models\SubCategory.cs" />
     <Compile Include="Models\ViewModel\AssetLocationCreateVM.cs" />
     <Compile Include="Models\ViewModel\CategoryCreateVM.cs" />
     <Compile Include="Models\ViewModel\GeneralcategoryCreateVM.cs" />
     <Compile Include="Models\ViewModel\OrganizationBranchCreateVM.cs" />
     <Compile Include="Models\ViewModel\OrganizationCreateVM.cs" />
+    <Compile Include="Models\ViewModel\ProductModelCreateVM.cs" />
     <Compile Include="Models\ViewModel\SubCategoryCreateVM.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -191,6 +197,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201611081749446_update2.resx">
       <DependentUpon>201611081749446_update2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611091232154_productModelTableAdded.resx">
+      <DependentUpon>201611091232154_productModelTableAdded.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

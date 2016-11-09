@@ -16,5 +16,6 @@ namespace AssetTracking.Model
         public DbSet<SubCategory> SubCategories { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<AssetLocation> AssetLocations { get; set; }
+        public DbSet<ProductModel> ProductModels { get; set; }
     }
 }
