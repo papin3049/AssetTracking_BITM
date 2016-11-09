@@ -56,7 +56,7 @@ namespace AssetTrackingSystem.Controllers
                 ViewBag.Message = "Saved Successfully!";
             }
             productModel.GeneralCategories = generalCategoriesSelectListItems;
-            productModel.SubCategories = sub
+            //productModel.SubCategories = sub
             return View(productModelVM);
         }
         public PartialViewResult SearchSubCategory(string keyword)

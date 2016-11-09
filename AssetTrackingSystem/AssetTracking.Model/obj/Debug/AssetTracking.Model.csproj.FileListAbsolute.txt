@@ -120,3 +120,5 @@ E:\demfinal\AssetTrackingSystem\AssetTracking.Model\obj\Debug\AssetTracking.Mode
 E:\demfinal\AssetTrackingSystem\AssetTracking.Model\obj\Debug\AssetTracking.Model.Migrations.updatecategoryidincategory.resources
 E:\demfinal\AssetTrackingSystem\AssetTracking.Model\obj\Debug\AssetTracking.Model.Migrations.updatecategoryidinsubcategory.resources
 >>>>>>> 74ada4ffdd1ed12fee090373fa2595acd09446a8
+H:\Github.AssetTracking\AssetTrackingSystem\AssetTracking.Model\obj\Debug\AssetTracking.Model.Migrations.updatecategoryidincategory.resources
+H:\Github.AssetTracking\AssetTrackingSystem\AssetTracking.Model\obj\Debug\AssetTracking.Model.Migrations.updatecategoryidinsubcategory.resources
