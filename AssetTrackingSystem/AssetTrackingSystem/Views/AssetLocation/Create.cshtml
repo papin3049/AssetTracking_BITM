@@ -29,7 +29,7 @@
                         @Html.Label("Organizations")
                         <br />
                         <div>
-                            @Html.DropDownList("OrganizationId", new SelectList(Model.Organizations, "Value", "Text"), new { @class = "form-control" })
+                            @Html.DropDownListFor(m => m.Organizations, new SelectList(Model.Organizations, "Value", "Text"), new { @class = "form-control" })
                         </div>
 
                         <br />
@@ -40,7 +40,7 @@
                         @Html.Label("Branch")
                         <br />
                         <div>
-                            @Html.DropDownListFor(m => m.AssetLocation.BranchId, Enumerable.Empty<SelectListItem>(), "--Select Category--", new { id = "branchId", @class = "form-control" })
+                            @Html.DropDownListFor(m => m.Branches, Enumerable.Empty<SelectListItem>(), "--Select Category--", new { id = "branchId", @class = "form-control" })
                         </div>
 
                         <br />
