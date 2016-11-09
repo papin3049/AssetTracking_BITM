@@ -167,9 +167,19 @@
     <Compile Include="Migrations\201611081749446_update2.Designer.cs">
       <DependentUpon>201611081749446_update2.cs</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="Migrations\201611091232154_productModelTableAdded.cs" />
     <Compile Include="Migrations\201611091232154_productModelTableAdded.Designer.cs">
       <DependentUpon>201611091232154_productModelTableAdded.cs</DependentUpon>
+=======
+    <Compile Include="Migrations\201611091507304_updatecategoryidincategory.cs" />
+    <Compile Include="Migrations\201611091507304_updatecategoryidincategory.Designer.cs">
+      <DependentUpon>201611091507304_updatecategoryidincategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611091511250_updatecategoryidinsubcategory.cs" />
+    <Compile Include="Migrations\201611091511250_updatecategoryidinsubcategory.Designer.cs">
+      <DependentUpon>201611091511250_updatecategoryidinsubcategory.cs</DependentUpon>
+>>>>>>> 74ada4ffdd1ed12fee090373fa2595acd09446a8
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AssetLocation.cs" />
@@ -198,8 +208,16 @@
     <EmbeddedResource Include="Migrations\201611081749446_update2.resx">
       <DependentUpon>201611081749446_update2.cs</DependentUpon>
     </EmbeddedResource>
+<<<<<<< HEAD
     <EmbeddedResource Include="Migrations\201611091232154_productModelTableAdded.resx">
       <DependentUpon>201611091232154_productModelTableAdded.cs</DependentUpon>
+=======
+    <EmbeddedResource Include="Migrations\201611091507304_updatecategoryidincategory.resx">
+      <DependentUpon>201611091507304_updatecategoryidincategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611091511250_updatecategoryidinsubcategory.resx">
+      <DependentUpon>201611091511250_updatecategoryidinsubcategory.cs</DependentUpon>
+>>>>>>> 74ada4ffdd1ed12fee090373fa2595acd09446a8
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
